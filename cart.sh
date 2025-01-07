@@ -27,13 +27,5 @@ cp /root/roboshop-shell/cart.service /etc/systemd/system/cart.service
 echo -e "\e[36m>>>>>>>>> Start Cart Service <<<<<<<<<\e[0m"
 systemctl daemon-reload
 systemctl enable cart
-systemctl start cart
+systemctl restart cart
 
-echo -e "\e[36m>>>>>>>>> Copy MongoDB repo <<<<<<<<<\e[0m"
-cp /root/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
-
-echo -e "\e[36m>>>>>>>>> Install MongoDB client <<<<<<<<<\e[0m"
-dnf install mongodb-org-shell -y
-
-echo -e "\e[36m>>>>>>>>> Load schema <<<<<<<<<\e[0m"
-mongo --host mongodb.saikumar22.store </app/schema/user.js
