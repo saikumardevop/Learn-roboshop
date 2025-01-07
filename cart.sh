@@ -24,7 +24,7 @@ npm install
 echo -e "\e[36m>>>>>>>>> Create Application Directory <<<<<<<<<\e[0m"
 cp /root/roboshop-shell/cart.service /etc/systemd/system/cart.service
 
-echo -e "\e[36m>>>>>>>>> Start Cart Service <<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>> reStart Cart Service <<<<<<<<<\e[0m"
 systemctl daemon-reload
 systemctl enable cart
 systemctl restart cart
