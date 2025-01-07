@@ -15,13 +15,13 @@ echo -e "\e[36m>>>>>>>>> Download APP Content <<<<<<<<<\e[0m"
 curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user.zip
 cd /app
 
-echo -e "\e[36m>>>>>>>>> Unzip App Constent <<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>> Unzip App Content <<<<<<<<<\e[0m"
 unzip /tmp/user.zip
 
 echo -e "\e[36m>>>>>>>>> Install Nodejs Dependecies <<<<<<<<<\e[0m"
 npm install
 
-echo -e "\e[36m>>>>>>>>> Start Create Application Dire <<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>> Start Create Application Directory <<<<<<<<<\e[0m"
 cp /root/roboshop-shell/user.service /etc/systemd/system/user.service
 
 echo -e "\e[36m>>>>>>>>> Start User Service <<<<<<<<<\e[0m"
