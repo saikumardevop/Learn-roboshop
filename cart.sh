@@ -18,7 +18,7 @@ cd /app
 echo -e "\e[36m>>>>>>>>> Unzip App Content <<<<<<<<<\e[0m"
 unzip /tmp/cart.zip
 
-echo -e "\e[36m>>>>>>>>> Install Nodejs Dependecies <<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>> Install Nodejs Dependencies <<<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>>> Create Application Directory <<<<<<<<<\e[0m"
