@@ -1,8 +1,9 @@
-source common.sh
+script_path=$(dirname $0)
+source $(script_path)/common.sh
 
-dirname $0
+echo $app-user
+
 exit
-
 
 echo -e "\e[36m>>>>>>>>> Configuring NodeJs repo <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
