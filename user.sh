@@ -1,5 +1,9 @@
 source common.sh
 
+dirname
+exit
+
+
 echo -e "\e[36m>>>>>>>>> Configuring NodeJs repo <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
 
