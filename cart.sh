@@ -7,7 +7,6 @@ echo -e "\e[36m>>>>>>>>> Install NodeJs <<<<<<<<<\e[0m"
 dnf install nodejs -y
 
 echo -e "\e[36m>>>>>>>>> Add Application User <<<<<<<<<\e[0m"
-useradd ${app_user}
 
 echo -e "\e[36m>>>>>>>>> Create Application Directory <<<<<<<<<\e[0m"
 rm -rf /app
