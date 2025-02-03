@@ -20,7 +20,7 @@ unzip /tmp/shipping.zip
 
 echo -e "\e[36m>>>>>>>>> Downloads Maven Dependencies <<<<<<<<<\e[0m"
 mvn clean package
-mv target/shipping-1.0.jar shipping.jar/
+mv target/shipping-1.0.jar shipping.jar
 
 echo -e "\e[36m>>>>>>>>> Install MySQL <<<<<<<<<\e[0m"
 yum install mysql -y
