@@ -1,5 +1,5 @@
 script_path=$(dirname $0)
-source ${script_path}|common.sh
+source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>>> Disable MySQL Version <<<<<<<<<\e[0m"
 dnf module disable mysql -y
