@@ -1,4 +1,4 @@
-script_path=$(dirname "$script")
+script_path=$(dirname $0)
 ssource ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>>> Install Redis Repos <<<<<<<<<\e[0m"
