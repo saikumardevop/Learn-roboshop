@@ -1,5 +1,5 @@
 script_path=$(dirname $0)
-ssource ${script_path}/common.sh
+source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>>> Install Redis Repos <<<<<<<<<\e[0m"
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
