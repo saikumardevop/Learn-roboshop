@@ -3,8 +3,8 @@ Description=Shipping Service
 
 [Service]
 User=roboshop
-Environment=CART_ENDPOINT=cart.saikumar22.store
-Environment=DB_HOST=mongodb.saikumar22.store
+Environment=CART_ENDPOINT= cart.saikumar22.store
+Environment=DB_HOST= mongodb.saikumar22.store
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
