@@ -4,7 +4,7 @@ source ${script_path}/common.sh
 
 component=catalogue
 schema_setup=mango
-func_nodejs
+func_nodes
 
 echo -e "\e[36m>>>>>>>>> Copy MongoDB repo <<<<<<<<<\e[0m"
 cp /root/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
