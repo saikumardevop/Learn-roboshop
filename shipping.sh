@@ -1,5 +1,7 @@
-script_path=$(dirname $0)
+script=$(realpath "$0")
+script_path=$(dirname "$script")
 source ${script_path}/common.sh
+mysql_root_password=$1
 
 echo -e "\e[36m>>>>>>>>> Install Maven <<<<<<<<<\e[0m"
 dnf install maven -y
@@ -26,7 +28,7 @@ echo -e "\e[36m>>>>>>>>> Install MySQL <<<<<<<<<\e[0m"
 yum install mysql -y
 
 echo -e "\e[36m>>>>>>>>> Load Schema <<<<<<<<<\e[0m"
-mysql -h mysql.saikumar22.store -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql.saikumar22.store -uroot -p${mysql_root_password} < /app/schema/shipping.sql
 
 echo -e "\e[36m>>>>>>>>> Setup SystemD Service <<<<<<<<<\e[0m"
 cp /root/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
