@@ -3,22 +3,30 @@ script_path=$(dirname "$script")
 source ${script_path}/common.sh
 rabbitmq_appuser_password=$1
 
-echo -e "\e[36m>>>>>>>>> Setup Erlang Repos <<<<<<<<<\e[0m"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+if [ -z "$rabbitmq_appuser_password"]; then
+  echo Input Roboshop Appuser password missing
+  exit
+fi
 
-echo -e "\e[36m>>>>>>>>> Setup Rabbitmq Repos <<<<<<<<<\e[0m"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+func_print_head "Setup Erlang Repos"
+curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash $<<log_files
+func_stat_check $?
 
-echo -e "\e[36m>>>>>>>>> Install Erlang RabbitMQ <<<<<<<<<\e[0m"
-dnf install erlang rabbitmq-server -y
+func_print_head "Setup Rabbitmq Repos"
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash $<<log_files
+func_stat_check $?
 
-echo -e "\e[36m>>>>>>>>> Start RabbitMQ Service <<<<<<<<<\e[0m"
-systemctl enable rabbitmq-server
-systemctl restart rabbitmq-server
+func_print_head "Install Erlang RabbitMQ"
+dnf install erlang rabbitmq-server -y $<<log_files
+func_stat_check $?
 
-echo -e "\e[36m>>>>>>>>> Add Application User In RabbitMQ  <<<<<<<<<\e[0m"
+func_print_head "Start RabbitMQ Service"
+systemctl enable rabbitmq-server $<<log_files
+systemctl restart rabbitmq-server $<<log_files
+func_stat_check $?
+
+
+func_print_head "Add Application User In RabbitMQ"
 rabbitmqctl add_user roboshop roboshop123
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
-
-
-rabbitmqctl roboshop ${rabbitmq appuser_password}
+func_stat_check $?
