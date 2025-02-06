@@ -10,6 +10,7 @@ fi
 
 func_print_head "Setup Erlang Repos"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash $<<log_files
+
 func_stat_check $?
 
 func_print_head "Setup Rabbitmq Repos"
@@ -27,6 +28,6 @@ func_stat_check $?
 
 
 func_print_head "Add Application User In RabbitMQ"
-rabbitmqctl add_user roboshop roboshop123
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+rabbitmqctl add_user roboshop roboshop123 $<<log_files
+rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" $<<log_files
 func_stat_check $?
