@@ -16,7 +16,7 @@ rm -rf /usr/share/nginx/html/* $>>$log file
 func_stat_check $?
 
 func_print_head "Download App Content"
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip $>>$log file
 func_stat_check $?
 
 func_print_head "Extracting APP Content"
