@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+log_file=/tmp/roboshop.log
 
 func_print_head "Install Redis Repos"
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$log_file
