@@ -4,7 +4,7 @@ source ${script_path}/common.sh
 
 
 func_print_head "Install Redis Redis Repos"
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y $>>log_file
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$log_file
 func_stat_check $?
 
 func_print_head "Install Redis"
@@ -13,11 +13,11 @@ yum install redis -y  &>>$log_file
 func_stat_check $?
 
 func_print_head"Update Redis Listen Address"
-sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/redis.conf /etc/redis/redis.conf $>>log_file
+sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/redis.conf /etc/redis/redis.conf &>>$log_file
 
 func_print_head "Start Redis Service"
-systemctl enable redis $>>log_file
-systemctl restart redis $>>log_file
+systemctl enable redis &>>$log_file
+systemctl restart redis &>>$log_file
 func_stat_check $?
 
 
