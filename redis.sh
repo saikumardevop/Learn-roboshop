@@ -7,7 +7,7 @@ yum install remi-release-8.10-2.el8.remi.noarch --nobest -y
 func_stat_check $?
 
 func_print_head "Install Redis"
-sudo yum install remi-release-8.10-2.el8.remi.noarch -y
+sudo yum install remi-release-8.10-2.el8.remi.noarch --skip-broken -y
 yum install redis -y 
 func_stat_check $?
 
