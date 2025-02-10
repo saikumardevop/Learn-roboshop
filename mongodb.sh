@@ -7,7 +7,7 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_file
 func_stat_check $?
 
 func_print_head "Install MongoDB"
-dnf install mongodb-org -y $>>$log_file
+dnf install mongodb-org -y &>>$log_file
 func_stat_check $?
 
 func_print_head "Update MongoDB Listen Adress"
